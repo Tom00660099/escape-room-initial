@@ -1,34 +1,47 @@
-def display_menu() -> list[str]:
+import adventurelib as adv
+import os, time
+
+def display_menu():
     print(
         """
 Welcome to Forest Escape!
-Below you will see the main menu.
+Main Menu:
+    New Game
+    Load Game
+    Credits
+    Exit Game
 
-    1 - New Game
-    2 - Load Game
-    3 - Exit Game
-
-Please choose a number from the list above.
+Please choose an option from the list above.
         """
     )
-    return ["1", "2", "3"]
 
-def menuinput():
-    while True:
-        allowed_options = display_menu()
-        option = input("> ")
-        if option not in allowed_options:
-            print("Invalid option! Please try again.")
-        else:
-            break
+@adv.when('new game')
+@adv.when('new')
+def new_game():
+    pass  # TODO
 
-    option = int(option)
-    if option == 1:
-        pass  # TODO
-    elif option == 2:
-        pass  # TODO
-    else:
-        exit()  # ? maybe add "thanks for playing..." message and time sleep for 5 seconds before exit
+@adv.when('load game')
+@adv.when('load')
+def load_game():
+    pass  # TODO
 
-if __name__ == "__main__":
-    menuinput()
+@adv.when('credits')
+def credits():
+    print(
+        """
+Forest Escape was designed and developed by:
+    Zack Hickson
+    Thomas Long
+    Jacob Hill
+        """
+    )
+
+@adv.when('exit game')
+@adv.when('exit')
+def exit_game():
+    print("Closing game...")
+    time.sleep(4)
+    exit()
+
+def start():
+    adv.start()
