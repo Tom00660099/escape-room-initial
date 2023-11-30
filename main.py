@@ -1,16 +1,16 @@
 if __name__ == "__main__":
     from setup import setup_checks
-    setup_checks()
+    setup_checks()  # ensure imports
 
-import adventurelib as adv
-import colorama
+import adventurelib as adv  # adventurelib - used for game commands
+from colorama import Fore  # used for colours
 import os, time
 
 def display_menu():
     print(
         """
 Welcome to Forest Escape!
-Main Menu:
+Main Menu Commands:
     New Game
     Load Game
     Credits
