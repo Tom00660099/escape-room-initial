@@ -1,3 +1,7 @@
+if __name__ == "__main__":
+    from setup import setup_checks
+    setup_checks()
+
 import adventurelib as adv
 import os, time
 
