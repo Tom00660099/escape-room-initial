@@ -25,7 +25,7 @@ Please choose an option from the list above.
 @adv.when('new game')
 @adv.when('new')
 def new_game():
-    pass  # TODO
+    pass  # TODO: save file name input, os.exists, create_save_file.py
 
 @adv.when('load game')
 @adv.when('load')
