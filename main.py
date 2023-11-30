@@ -8,6 +8,7 @@ import os, time
 
 def display_menu():
     print(
+        Fore.GREEN,
         """
 Welcome to Forest Escape!
 Main Menu Commands:
@@ -17,7 +18,8 @@ Main Menu Commands:
     Exit Game
 
 Please choose an option from the list above.
-        """
+        """,
+        Fore.RESET
     )
 
 @adv.when('new game')
@@ -33,23 +35,30 @@ def load_game():
 @adv.when('credits')
 def credits():
     print(
+        Fore.GREEN,
         """
 Forest Escape was designed and developed by:
-    Zack Hickson
-    Thomas Long
-    Jacob Hill
-        """
+    Zack Hickson - 30237284
+    Thomas Long - 30235093
+    Jacob Hill - 30235348
+        """,
+        Fore.RESET
     )
+    display_menu()
 
 @adv.when('exit game')
 @adv.when('exit')
 def exit_game():
-    print("Closing game...")
+    print(Fore.RED, "Closing game...", Fore.RESET)
     time.sleep(4)
     exit()
 
+def no_command_matches(command: str):
+    print(f"{Fore.RED}'{command}' is not a valid menu command.{Fore.RESET}")
+
 def start():
     display_menu()
+    adv.no_command_matches = no_command_matches
     adv.start()
 
 if __name__ == "__main__":
