@@ -1,0 +1,6 @@
+{
+    "current_room": "Room1",
+    "inventory": ["Room1Key"],
+    "rooms_visited": ["Room1"],
+    "latest_room_unlocked": "Room2"
+}
