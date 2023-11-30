@@ -3,6 +3,7 @@ if __name__ == "__main__":
     setup_checks()
 
 import adventurelib as adv
+import colorama
 import os, time
 
 def display_menu():
