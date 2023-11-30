@@ -49,4 +49,8 @@ def exit_game():
     exit()
 
 def start():
+    display_menu()
     adv.start()
+
+if __name__ == "__main__":
+    start()
