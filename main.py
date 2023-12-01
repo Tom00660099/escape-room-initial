@@ -33,11 +33,18 @@ def new_game():
         else:
             break
     funcs.createSaveFile(name)
+    # TODO
 
 @adv.when('load game')
 @adv.when('load')
 def load_game():
-    pass  # TODO
+    file_names = funcs.findSaveFileNames()
+    text = f"{Fore.RESET}Please enter a number from the list below.\n"
+    for i in range(1, len(file_names)+1):
+        text += f"{Fore.GREEN}{i}{Fore.RESET} - {Fore.BLUE}{file_names[i-1]}{Fore.RESET}"
+    print(text)
+    num = input(">>> ")
+    
 
 @adv.when('credits')
 def credits():
