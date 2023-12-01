@@ -5,6 +5,7 @@ if __name__ == "__main__":
 import adventurelib as adv  # adventurelib - used for game commands
 from colorama import Fore  # used for colours
 import os, time
+import funcs
 
 def display_menu():
     print(
@@ -25,7 +26,13 @@ Please choose an option from the list above.
 @adv.when('new game')
 @adv.when('new')
 def new_game():
-    pass  # TODO: save file name input, os.exists, create_save_file.py
+    while True:
+        name = input("Please enter a name for your save file:\n>>> ")
+        if os.exists(f'save_files/{name}.json') is True:
+            print("That name is already used. Please enter a new name.")
+        else:
+            break
+    funcs.createSaveFile(name)
 
 @adv.when('load game')
 @adv.when('load')
