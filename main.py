@@ -30,7 +30,7 @@ Please choose an option from the list above.
 def new_game():
     while True:
         name = input("Please enter a name for your save file:\n>>> ")
-        if os.exists(f'save_files/{name}.json') is True:
+        if os.path.exists(f'save_files/{name}.json') is True:
             print("That name is already used. Please enter a new name.")
         else:
             break
