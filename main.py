@@ -7,6 +7,8 @@ from colorama import Fore  # used for colours
 import os, time
 import funcs
 
+game_data = dict()
+
 def display_menu():
     print(
         Fore.GREEN,
