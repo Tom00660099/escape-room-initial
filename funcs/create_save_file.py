@@ -8,7 +8,7 @@ standard_data = dict(
 )
 
 def createSaveFile(name: str):
-    f = open(f'save_files/{name}.json')
+    f = open(f'save_files/{name}.json', 'w')
     json.dump(standard_data, f)
     f.close()
     return True

@@ -30,12 +30,20 @@ Please choose an option from the list above.
 def new_game():
     while True:
         name = input("Please enter a name for your save file:\n>>> ")
+        if name.lower() == "cancel":
+            os.system('cls')
+            display_menu()
+            return
         if os.path.exists(f'save_files/{name}.json') is True:
-            print("That name is already used. Please enter a new name.")
+            print(f"{Fore.RED}That name is already used. Please enter a new name.{Fore.RESET}")
         else:
             break
     funcs.createSaveFile(name)
-    # TODO
+    game_data = funcs.getSaveFile(name)
+    os.system('cls')
+    print(f"{Fore.GREEN}Save file created!{Fore.RESET}")
+    # TODO: start room1
+
 
 @adv.when('load game')
 @adv.when('load')
@@ -44,8 +52,36 @@ def load_game():
     text = f"{Fore.RESET}Please enter a number from the list below.\n"
     for i in range(1, len(file_names)+1):
         text += f"{Fore.GREEN}{i}{Fore.RESET} - {Fore.BLUE}{file_names[i-1]}{Fore.RESET}"
-    print(text)
-    num = input(">>> ")
+    while True:
+        os.system('cls')
+        print(text)
+        num = input(">>> ")
+        if num.lower() == "cancel":
+            os.system('cls')
+            display_menu()
+            return
+        if num.isdigit() is False:
+            print(f"{Fore.RED}Incorrect input!{Fore.RESET}")
+        else:
+            try:
+                num = int(num)
+            except:
+                print(f"{Fore.RED}Incorrect input!{Fore.RESET}")
+            else:
+                if num <= len(file_names):
+                    break
+                else:
+                    print(f"{Fore.RED}Incorrect input!{Fore.RESET}")
+        time.sleep(2)
+    name = file_names[num - 1]
+    try:
+        game_data = funcs.getSaveFile(name)
+    except:
+        print(f"{Fore.RED}Save file doesn't exist anymore!{Fore.RESET}")
+        input(f"{Fore.RED}\nPress ENTER to continue.{Fore.RESET}")
+        os.system('cls')
+        display_menu()
+        return
     
 
 @adv.when('credits')
@@ -60,6 +96,8 @@ Forest Escape was designed and developed by:
         """,
         Fore.RESET
     )
+    input(f"\n{Fore.BLUE}Press ENTER to continue.{Fore.RESET}\n")
+    os.system('cls')
     display_menu()
 
 @adv.when('exit game')
