@@ -1,5 +1,6 @@
 from adventurelib import *
 from random import choice
+from colorama import Fore
 
 
 Room.add_direction('north east', 'south west')
@@ -8,6 +9,7 @@ Room.add_direction('north west', 'south east')
 prologue = Room("""  """)
 
 current_room = prologue
+Room.can_start = False
 
 entrance = Room(""" 
 Aye the rooms chilly Fam.
@@ -15,14 +17,13 @@ Bare Dark and that aswell,
 There's like 8 doors about, one of em must be open.
 """)
 
-Room.can_start = False
 prologue.can_start = True
 
 @when('start')
 def enter_entrance():
     global current_room
     if current_room.can_start is False:
-        print("how have you done this shit")
+        print(f"{Fore.RED}'start' is not a valid command.{Fore.RESET}")
         return
     current_room = entrance
     print(current_room)
