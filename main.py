@@ -42,6 +42,13 @@ def new_game():
     game_data = funcs.getSaveFile(name)
     os.system('cls')
     print(f"{Fore.GREEN}Save file created!{Fore.RESET}")
+    # send prologue
+    with open('assets/prologue.txt', 'r') as f:
+        text = f.read().split('\n\n')
+    for txt in text:
+        print(txt)
+        time.sleep(1.5)
+    
     # TODO: start room1
 
 
