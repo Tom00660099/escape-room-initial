@@ -46,8 +46,8 @@ def new_game():
     with open('assets/prologue.txt', 'r') as f:
         text = f.read().split('\n\n')
     for txt in text:
-        print(txt)
-        time.sleep(1.5)
+        print("\n", txt)
+        time.sleep(5)
     
     # TODO: start room1
 
