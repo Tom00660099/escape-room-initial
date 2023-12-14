@@ -12,9 +12,11 @@ current_room = prologue
 Room.can_start = False
 
 entrance = Room(""" 
+This must be an entrance or something
 Aye the rooms chilly Fam.
 Bare Dark and that aswell,
-There's like 8 doors about, one of em must be open.
+There's like 8 doors about, one of em must be open
+((Type a Direction to choose a door))
 """)
 
 prologue.can_start = True
@@ -42,7 +44,9 @@ correct_door = choice(["north", "north east", "east", "south east", "south", "so
 def go(direction):
     global current_room
     if direction == correct_door :
-        print("congrats")
+        print("aye i found the exit fam")
+    else :
+        print("Not this one bro")
 
 
 
