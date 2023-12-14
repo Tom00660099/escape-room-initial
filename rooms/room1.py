@@ -43,7 +43,7 @@ fail_responses_list = [
 ]
 fail_responses = {}
 incorrect_directions = directions.copy().remove(correct_door)
-incorrect_directions = shuffle(incorrect_directions)
+incorrect_directions = shuffle(set(incorrect_directions))
 for i in range(7):
     fail_responses[incorrect_directions[i]] = fail_responses_list[i]
 
