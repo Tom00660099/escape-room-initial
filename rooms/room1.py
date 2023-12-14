@@ -42,7 +42,8 @@ fail_responses_list = [
     "Not this one bro."
 ]
 fail_responses = {}
-incorrect_directions = directions.copy().remove(correct_door)
+incorrect_directions = directions.copy()
+incorrect_directions.remove(correct_door)
 shuffle(incorrect_directions)
 for i in range(7):
     fail_responses[incorrect_directions[i]] = fail_responses_list[i]
