@@ -67,4 +67,5 @@ def go(direction):
 
 
 
-start()
+def _start():
+    start()

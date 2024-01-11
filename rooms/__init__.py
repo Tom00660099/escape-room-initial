@@ -1,1 +1,1 @@
-# TODO: Import rooms
+from .room1 import start as room1
