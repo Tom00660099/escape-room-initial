@@ -6,6 +6,7 @@ import adventurelib as adv  # adventurelib - used for game commands
 from colorama import Fore  # used for colours
 import os, time
 import funcs
+from rooms import *
 
 game_data = dict()
 
@@ -49,7 +50,7 @@ def new_game():
         print("\n", txt)
         time.sleep(5)
     
-    # TODO: start room1
+    room1()
 
 
 @adv.when('load game')
