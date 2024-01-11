@@ -8,6 +8,8 @@ import os, time
 import funcs
 from rooms import *
 
+menu_active = True
+
 game_data = dict()
 
 def display_menu():
@@ -59,7 +61,7 @@ def load_game():
     file_names = funcs.findSaveFileNames()
     text = f"{Fore.RESET}Please enter a number from the list below.\n"
     for i in range(1, len(file_names)+1):
-        text += f"{Fore.GREEN}{i}{Fore.RESET} - {Fore.BLUE}{file_names[i-1]}{Fore.RESET}"
+        text += f"{Fore.GREEN}{i}{Fore.RESET} - {Fore.BLUE}{file_names[i-1]}{Fore.RESET}\n"
     while True:
         os.system('cls')
         print(text)
