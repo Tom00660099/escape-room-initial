@@ -1,1 +1,1 @@
-from .room1 import start as room1
+from .room1 import _start as room1

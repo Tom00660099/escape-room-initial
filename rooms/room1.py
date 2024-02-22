@@ -2,22 +2,23 @@ from adventurelib import *
 from random import choice, shuffle
 from colorama import Fore
 
-
 Room.add_direction('north east', 'south west')
 Room.add_direction('north west', 'south east')
 
-prologue = Room("""  """)
+prologue = Room(""" """)
 
-current_room = prologue
+current_room = proglogue
 Room.can_start = False
 
-entrance = Room(""" 
-This must be an entrance or something
+entrance = Room(
+    """
+This must be an entrance or something.
 Aye the rooms chilly Fam.
 Bare Dark and that aswell,
-There's like 8 doors about, one of em must be open
-((Type a Direction to choose a door))
-""")
+There's like 8 doors about, one of em must be open.
+((Type a Direction to choose a door. Example: north east))
+    """
+)
 
 prologue.can_start = True
 
@@ -25,7 +26,7 @@ prologue.can_start = True
 def enter_entrance():
     global current_room
     if current_room.can_start is False:
-        print(f"{Fore.RED}'start' is not a valid command.{Fore.RESET}")
+        print(f"{Fore.RED}'start' can only be used in the menu.{Fore.RESET}")
         return
     current_room = entrance
     print(current_room)
@@ -49,7 +50,6 @@ for i in range(7):
     fail_responses[incorrect_directions[i]] = fail_responses_list[i]
 
 
-
 @when('north', direction='north')
 @when('south', direction='south')
 @when('east', direction='east')
@@ -60,11 +60,10 @@ for i in range(7):
 @when('south west', direction='south west')
 def go(direction):
     global current_room
-    if direction == correct_door :
+    if direction == correct_door:
         print("aye i found the exit fam")
-    else :
+    else:
         print(fail_responses[direction])
-
 
 
 def _start():
