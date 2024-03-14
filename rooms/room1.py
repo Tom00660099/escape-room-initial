@@ -31,15 +31,37 @@ def enter_entrance():
     current_room = entrance
     print(current_room)
 
-directions = ["north", "north east", "east", "south east", "south", "south west", "west", "north west"] # retard
+directions = [
+    "north", "north east", "east", "south east", 
+    "south", "south west", "west", "north west"
+]
 correct_door = choice(directions)
 fail_responses_list = [
-    "Oi, fam, you must be joking! That door's proper locked up. It ain't just gonna swing open for you like it's your front yard. Check the signs, bruv, and find the real escape route.", # retard
-    "Hold on, hold on! You thought that door was gonna magically open? Nah, fam, it's locked up tight. You gotta use your head, not just try any old door, you get me?", # retard
-    "Oi, what you playin' at? That door's locked like Fort Knox. You can't just stroll through any old entrance, blud. Look for the right one, and maybe you'll actually get out of here.", # retard
-    "Bruh, did you miss the memo? Wrong door means locked door. It's not a game of luck, it's a game of brains. Sort it out and find the one that ain't bolted shut.", # retard
-    "You've got the wrong door, and guess what? It's locked, my guy. Ain't no luck in that choice. Better luck next time, and try not to pick the doors that don't budge.", # retard
-    "Hold up, hold up! That door's as locked as a safe. You need to be smarter, fam. The right door ain't just gonna open for anyone. Look before you leap, innit?", # retard
+    "Oi, fam, you must be joking! That door's proper locked up."
+    " It ain't just gonna swing open for you like it's your front yard."
+    " Check the signs, bruv, and find the real escape route.",
+
+    "Hold on, hold on! You thought that door was gonna magically open?"
+    " Nah, fam, it's locked up tight. You gotta use your head,"
+    " not just try any old door, you get me?",
+
+    "Oi, what you playin' at? That door's locked like Fort Knox. "
+    "You can't just stroll through any old entrance, blud. "
+    "Look for the right one, and maybe you'll actually get out of here.",
+
+    "Bruh, did you miss the memo? Wrong door means locked door. "
+    "It's not a game of luck, it's a game of brains. "
+    "Sort it out and find the one that ain't bolted shut.",
+
+    "You've got the wrong door, and guess what? It's locked, my guy."
+    " Ain't no luck in that choice. Better luck next time, "
+    "and try not to pick the doors that don't budge.",
+
+    "Hold up, hold up! That door's as locked as a safe. "
+    "You need to be smarter, fam. "
+    "The right door ain't just gonna open for anyone. "
+    "Look before you leap, innit?",
+    
     "Not this one bro."
 ]
 fail_responses = {}

@@ -15,7 +15,8 @@ game_data = dict()
 def display_menu():
     print(
         Fore.GREEN,
-        "Welcome to Forest Escape!\nMain Menu Commands:\n- Play\n- Credits\n- Exit\n\nPlease choose an option from the list above.", # retard
+        "Welcome to Forest Escape!\nMain Menu Commands:\n- Play\n"
+        "- Credits\n- Exit\n\nPlease choose an option from the list above.", # retard
         Fore.RESET
     )
     
