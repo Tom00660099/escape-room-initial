@@ -7,7 +7,7 @@ Room.add_direction('north west', 'south east')
 
 prologue = Room(""" """)
 
-current_room = proglogue
+current_room = prologue
 Room.can_start = False
 
 entrance = Room(
@@ -61,7 +61,7 @@ fail_responses_list = [
     "You need to be smarter, fam. "
     "The right door ain't just gonna open for anyone. "
     "Look before you leap, innit?",
-    
+
     "Not this one bro."
 ]
 fail_responses = {}
