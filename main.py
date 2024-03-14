@@ -15,7 +15,7 @@ game_data = dict()
 def display_menu():
     print(
         Fore.GREEN,
-        "Welcome to Forest Escape!\nMain Menu Commands:\n- Play\n- Credits\n- Exit\n\nPlease choose an option from the list above.",
+        "Welcome to Forest Escape!\nMain Menu Commands:\n- Play\n- Credits\n- Exit\n\nPlease choose an option from the list above.", # retard
         Fore.RESET
     )
     
@@ -39,7 +39,7 @@ def play():
 def credits():
     print(
         Fore.GREEN,
-        "Forest Escape was designed and developed by:\n- Zack Hickson - 30237284\nThomas Long - 30235093",
+        "Forest Escape was designed and developed by:\n- Zack Hickson - 30237284\nThomas Long - 30235093", # retard
         Fore.RESET
     )
     input(f"\n{Fore.BLUE}Press ENTER to continue.{Fore.RESET}\n")
